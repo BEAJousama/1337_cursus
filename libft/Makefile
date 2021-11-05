@@ -6,7 +6,7 @@
 #    By: obeaj <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 19:09:12 by obeaj             #+#    #+#              #
-#    Updated: 2021/11/04 20:38:03 by obeaj            ###   ########.fr        #
+#    Updated: 2021/11/05 19:23:03 by obeaj            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,7 @@ FILES = ft_memset \
 		ft_strdup \
 		ft_substr \
 		ft_strmapi \
+		ft_striteri \
 		ft_putchar_fd \
 		ft_putstr_fd \
 		ft_putendl_fd \
@@ -50,7 +51,12 @@ FILES = ft_memset \
 		ft_lstnew \
 		ft_lstadd_front \
 		ft_lstsize \
-		ft_lstlast
+		ft_lstlast \
+		ft_lstadd_back \
+		ft_lstdelone \
+		ft_lstclear \
+		ft_lstiter \
+		ft_lstmap
 	
 SRCS_DIR = ./
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
