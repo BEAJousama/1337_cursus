@@ -6,7 +6,7 @@
 /*   By: obeaj <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 13:03:58 by obeaj             #+#    #+#             */
-/*   Updated: 2021/11/05 17:06:50 by obeaj            ###   ########.fr       */
+/*   Updated: 2021/11/06 20:03:25 by obeaj            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s != c)
+	while (*s != (unsigned char)c)
 	{
 		if (*s == '\0')
 			return (NULL);

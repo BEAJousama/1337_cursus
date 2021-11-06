@@ -6,13 +6,11 @@
 /*   By: obeaj <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 16:23:32 by obeaj             #+#    #+#             */
-/*   Updated: 2021/11/06 13:04:20 by obeaj            ###   ########.fr       */
+/*   Updated: 2021/11/06 13:47:18 by obeaj            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-# define MAX_INT 2147483647
-# define MIN_INT -2147483648
 
 int	ft_atoi(const char *str)
 {
@@ -36,9 +34,5 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	result *= s;
-	if (result > MAX_INT)
-		return (-1);
-	if (result < MIN_INT)
-		return (0);
 	return (result);
 }

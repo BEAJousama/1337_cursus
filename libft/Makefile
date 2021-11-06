@@ -6,7 +6,7 @@
 #    By: obeaj <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 19:09:12 by obeaj             #+#    #+#              #
-#    Updated: 2021/11/06 12:40:07 by obeaj            ###   ########.fr        #
+#    Updated: 2021/11/06 18:27:27 by obeaj            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,8 @@ FILES = ft_memset \
 		ft_lstiter \
 		ft_lstmap \
 		ft_itoa \
-		ft_split
+		ft_split \
+		ft_strtrim
 	
 FILES_B = ft_lstnew \
 		  ft_lstadd_front \
