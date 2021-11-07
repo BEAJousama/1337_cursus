@@ -6,7 +6,7 @@
 #    By: obeaj <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 19:09:12 by obeaj             #+#    #+#              #
-#    Updated: 2021/11/06 18:27:27 by obeaj            ###   ########.fr        #
+#    Updated: 2021/11/07 15:34:25 by obeaj            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,15 +48,6 @@ FILES = ft_memset \
 		ft_putnbr_fd \
 		ft_strncmp \
 		ft_strjoin \
-		ft_lstnew \
-		ft_lstadd_front \
-		ft_lstsize \
-		ft_lstlast \
-		ft_lstadd_back \
-		ft_lstdelone \
-		ft_lstclear \
-		ft_lstiter \
-		ft_lstmap \
 		ft_itoa \
 		ft_split \
 		ft_strtrim
@@ -71,16 +62,14 @@ FILES_B = ft_lstnew \
 		  ft_lstiter \
 		  ft_lstmap \
 
-SRCS_DIR = ./
-SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
-SRCS_B = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES_B)))
+
 
 OBJS_DIR = ./
 OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
 OBJS_B = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES_B)))
 
-.c.o: $(SRCS)
-	$(CC) $(CFLAGS) -c -o $@ $<
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@ 
 
 $(NAME): $(OBJS)
 	$(AR) $@ $^
