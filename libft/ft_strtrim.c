@@ -6,7 +6,7 @@
 /*   By: obeaj <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 09:57:43 by obeaj             #+#    #+#             */
-/*   Updated: 2021/11/07 10:18:31 by obeaj            ###   ########.fr       */
+/*   Updated: 2021/11/07 16:12:22 by obeaj            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*s;
 
 	first = 0;
-	last = ft_strlen(s1) - 1;
 	if (!s1 || !set)
 		return (NULL);
+	last = ft_strlen(s1) - 1;
 	while (is_set(*(s1 + first), set))
 		first++;
 	while (is_set(*(s1 + last), set) && last >= 0)

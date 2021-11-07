@@ -6,7 +6,7 @@
 /*   By: obeaj <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 12:00:28 by obeaj             #+#    #+#             */
-/*   Updated: 2021/11/06 12:50:37 by obeaj            ###   ########.fr       */
+/*   Updated: 2021/11/07 16:08:21 by obeaj            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	ft_copy_word(char *dest, char const *from, char charset)
 	dest[i] = '\0';
 }
 
-void	ft_move_to_tab(char **tab, char const *str, char charset)
+int	ft_move_to_tab(char **tab, char const *str, char charset)
 {
 	int	i;
 	int	j;
@@ -69,23 +69,37 @@ void	ft_move_to_tab(char **tab, char const *str, char charset)
 			while (!is_sep(str[i + j], charset))
 				j++;
 			tab[word] = (char *)malloc(j + 1);
+			if (!tab)
+				return (0);
 			ft_copy_word(tab[word], str + i, charset);
 			i = i + j;
 			word++;
 		}
 	}
+	return (1);
 }
 
 char	**ft_split(char const *str, char charset)
 {
 	char	**tab;
 	int		word;
+	size_t	i;
 
+	i = 0;
+	if (!str)
+		return (NULL);
 	word = count_words(str, charset);
 	tab = (char **)malloc(sizeof(char *) * (word + 1));
 	if (!tab)
 		return (NULL);
 	tab[word] = 0;
-	ft_move_to_tab(tab, str, charset);
+	if (!ft_move_to_tab(tab, str, charset))
+	{
+		while (tab[i++])
+		{
+			free(tab[i]);
+		}
+		free(tab);
+	}
 	return (tab);
 }

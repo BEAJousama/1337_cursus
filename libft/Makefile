@@ -6,7 +6,7 @@
 #    By: obeaj <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 19:09:12 by obeaj             #+#    #+#              #
-#    Updated: 2021/11/07 15:34:25 by obeaj            ###   ########.fr        #
+#    Updated: 2021/11/07 19:13:52 by obeaj            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -86,5 +86,3 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: clean all
-
-.PHONY: bonus all clean fclean re
