@@ -6,7 +6,7 @@
 /*   By: obeaj <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 12:59:48 by obeaj             #+#    #+#             */
-/*   Updated: 2021/11/05 15:03:28 by obeaj            ###   ########.fr       */
+/*   Updated: 2021/11/08 13:41:40 by obeaj            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (NULL);
 	while (i < length)
 	{
-		t[i] = f(i, s[i]);
+		*(t + i) = f(i, *(s + i));
 		i++;
 	}
-	t[i] = '\0';
+	*(t + i) = '\0';
 	return (t);
 }
