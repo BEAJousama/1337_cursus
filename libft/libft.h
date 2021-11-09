@@ -6,15 +6,13 @@
 /*   By: obeaj <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 11:06:06 by obeaj             #+#    #+#             */
-/*   Updated: 2021/11/06 18:27:08 by obeaj            ###   ########.fr       */
+/*   Updated: 2021/11/09 19:38:34 by obeaj            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# define MAX_INT 2147483647
-# define MIN_INT -2147483648
 # include <unistd.h>
 # include <stdlib.h>
 

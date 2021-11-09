@@ -6,7 +6,7 @@
 /*   By: obeaj <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 19:34:54 by obeaj             #+#    #+#             */
-/*   Updated: 2021/11/08 14:40:22 by obeaj            ###   ########.fr       */
+/*   Updated: 2021/11/09 19:03:12 by obeaj            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
+	if (!lst)
+		return ;
 	new -> next = *lst;
 	*lst = new;
 }

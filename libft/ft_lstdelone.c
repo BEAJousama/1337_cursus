@@ -6,7 +6,7 @@
 /*   By: obeaj <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 09:16:16 by obeaj             #+#    #+#             */
-/*   Updated: 2021/11/08 14:40:50 by obeaj            ###   ########.fr       */
+/*   Updated: 2021/11/09 19:08:19 by obeaj            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
+	if (!lst || !del)
+		return ;
 	del(lst -> content);
 	free(lst);
 }
