@@ -9,8 +9,8 @@
 	* PROJECT 1 : LIBFT
 	____________________
 
-	This project is about re-writing highly useful standard functions of C language and archiving them into a library called 
-	libft.
+	This project is about re-writing highly useful standard functions of C language and archiving them
+	into a library called libft.
 
 	* PROJECT 2 : GET_NEXT_LINE
 	___________________________
