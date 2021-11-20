@@ -105,22 +105,3 @@ char	*get_next_line(int fd)
 	reste = formatreste(reste);
 	return (line);
 }
-/*
-int main()
-{
-	int fd = open("txt.txt", O_RDONLY);
-	char *line;
-	//int fd = 0;
-	for (size_t i = 0; i < 100; i++)
-	{
-		line = get_next_line(0);
-		printf("line 1 : %s", line);
-		free(line);
-	}
-	free(line);
-	printf("line 2 : %s", get_next_line(fd));
-	printf("line 3 : %s", get_next_line(fd));
-	printf("line 4 : %s", get_next_line(fd));
-	printf("line 5 : %s\n", get_next_line(fd));
-}
-*/
