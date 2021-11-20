@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obeaj <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/12 12:28:42 by obeaj             #+#    #+#             */
-/*   Updated: 2021/11/20 12:33:57 by obeaj            ###   ########.fr       */
+/*   Created: 2021/11/20 17:42:23 by obeaj             #+#    #+#             */
+/*   Updated: 2021/11/20 17:42:36 by obeaj            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
-char	*readbuffer(char *reste, int fd)
+char	*readbuffer_bonus(char *reste, int fd)
 {
 	char	*buff;
 	int		readen;
@@ -21,7 +21,7 @@ char	*readbuffer(char *reste, int fd)
 	if (!buff)
 		return (NULL);
 	readen = 1;
-	while (readen && !ft_strchr(reste, '\n'))
+	while (readen && !ft_strchr_bonus(reste, '\n'))
 	{
 		readen = read (fd, buff, BUFFER_SIZE);
 		if (readen == -1)
@@ -30,13 +30,13 @@ char	*readbuffer(char *reste, int fd)
 			return (NULL);
 		}
 		buff[readen] = '\0';
-		reste = ft_strjoin(reste, buff);
+		reste = ft_strjoin_bonus(reste, buff);
 	}
 	free(buff);
 	return (reste);
 }
 
-char	*formatline(char *reste)
+char	*formatline_bonus(char *reste)
 {
 	char	*line;
 	char	*ln;
@@ -65,7 +65,7 @@ char	*formatline(char *reste)
 	return (ln);
 }
 
-char	*formatreste(char *reste)
+char	*formatreste_bonus(char *reste)
 {
 	char	*res;
 	char	*newreste;
@@ -79,7 +79,7 @@ char	*formatreste(char *reste)
 		free(reste);
 		return (NULL);
 	}
-	newreste = malloc(ft_strlen(res + 1) + 1);
+	newreste = malloc(ft_strlen_bonus(res + 1) + 1);
 	if (!newreste)
 		return (NULL);
 	pnewreste = newreste;
@@ -93,34 +93,15 @@ char	*formatreste(char *reste)
 
 char	*get_next_line(int fd)
 {
-	static char	*reste;
+	static char	*reste[4096];
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	reste = readbuffer(reste, fd);
-	if (!reste)
+	reste[fd] = readbuffer_bonus(reste[fd], fd);
+	if (!reste[fd])
 		return (NULL);
-	line = formatline(reste);
-	reste = formatreste(reste);
+	line = formatline_bonus(reste[fd]);
+	reste[fd] = formatreste_bonus(reste[fd]);
 	return (line);
 }
-/*
-int main()
-{
-	int fd = open("txt.txt", O_RDONLY);
-	char *line;
-	//int fd = 0;
-	for (size_t i = 0; i < 100; i++)
-	{
-		line = get_next_line(0);
-		printf("line 1 : %s", line);
-		free(line);
-	}
-	free(line);
-	printf("line 2 : %s", get_next_line(fd));
-	printf("line 3 : %s", get_next_line(fd));
-	printf("line 4 : %s", get_next_line(fd));
-	printf("line 5 : %s\n", get_next_line(fd));
-}
-*/
