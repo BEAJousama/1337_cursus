@@ -6,31 +6,11 @@
 /*   By: obeaj <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 12:29:09 by obeaj             #+#    #+#             */
-/*   Updated: 2021/11/19 18:32:57 by obeaj            ###   ########.fr       */
+/*   Updated: 2021/11/21 11:19:04 by obeaj            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-char	*ft_strdup(const char *src)
-{
-	char	*dest;
-	int		i;
-
-	i = 0;
-	dest = (char *)malloc(ft_strlen(src) + 1);
-	if (dest != NULL)
-	{
-		while (*(src + i))
-		{
-			*(dest + i) = *(src + i);
-			i++;
-		}
-		*(dest + i) = '\n';
-		return (dest);
-	}
-	return (NULL);
-}
 
 char	*ft_strjoin(char *reste, char *buff)
 {

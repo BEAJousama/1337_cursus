@@ -17,8 +17,6 @@
 # include <stdlib.h>
 
 char	*get_next_line(int fd);
-char	*ft_substr_bonus(char const *s, unsigned int start, size_t len);
-char	*ft_strjoin_bonus(char *s1, char *s2);
 char	*ft_strjoin_bonus(char *reste, char *buff);
 char	*ft_strchr_bonus(const char *s, int c);
 size_t	ft_strlen_bonus(const	char *s);
