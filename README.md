@@ -19,3 +19,9 @@
 	get called, this will be very helpful if we want to process files line by line.
 
 
+	* PROJECT 3 : FT_PRINTF
+	________________________
+	
+	The idea behind this project is to code printf function as it is defined by the linux system. 
+	I handled the 'csdpiuxX%' specifiers without flags.
+	To do : add 'f' specifier to support floats, and handling the flags..
